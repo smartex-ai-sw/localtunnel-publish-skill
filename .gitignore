@@ -1,0 +1,6 @@
+.local/preview-auth.pass
+.local/tunnel-share.pass
+__pycache__/
+*.py[cod]
+.venv/
+venv/
