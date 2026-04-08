@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Localtunnel Publish</title>
+  <desc id="desc">Local preview to public URL</desc>
+  <rect width="128" height="128" rx="20" fill="#0f172a"/>
+  <path d="M32 88c0-22 18-40 40-40s40 18 40 40" fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="44" cy="48" r="10" fill="#22c55e"/>
+  <circle cx="84" cy="48" r="10" fill="#f59e0b"/>
+  <path d="M52 72h24" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
+</svg>

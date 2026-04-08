@@ -1,0 +1,18 @@
+{
+  "name": "localtunnel-publish-skill",
+  "owner": {
+    "name": "smartex-ai-sw",
+    "email": "opensource@smartex.ai"
+  },
+  "metadata": {
+    "description": "Password-protected local static previews via localtunnel and HTTP Basic Auth",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "localtunnel-publish",
+      "source": "./plugins/localtunnel-publish",
+      "description": "Serve static files on 127.0.0.1 with Basic Auth, clean up prior tunnels, pair with npx localtunnel"
+    }
+  ]
+}

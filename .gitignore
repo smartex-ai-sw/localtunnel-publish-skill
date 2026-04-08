@@ -1,5 +1,21 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
 .local/preview-auth.pass
 .local/tunnel-share.pass
+
+# OS and editor
+.DS_Store
+*.swp
+*.swo
+
+# Logs and temp
+*.log
+tmp/
+temp/
+
+# Python
 __pycache__/
 *.py[cod]
 .venv/

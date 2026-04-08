@@ -1,36 +1,59 @@
 # localtunnel-publish-skill
 
-Share a **local static site** over the internet with **HTTP Basic Auth** on `127.0.0.1`, then expose it with **[localtunnel](https://github.com/localtunnel/localtunnel)** (`npx -y localtunnel`).
+Cursor Marketplace plugin repository built from the official [cursor/plugin-template](https://github.com/cursor/plugin-template).
 
-## Quick start
+## Plugin: `localtunnel-publish`
 
-```bash
-cd .cursor/skills/publish-preview/scripts
-uv run serve_basic_auth.py --show-guide
-```
+Share a **local static site** on the public internet:
 
-Then run the server and tunnel as printed (or read `.cursor/skills/publish-preview/SKILL.md`).
+- **HTTP Basic Auth** on `127.0.0.1` (Python `ThreadingHTTPServer`)
+- **PEP 723** / **`uv run`** for `psutil` and reliable cleanup on Linux, macOS, and Windows
+- Pair with **`npx -y localtunnel`** for an `https://*.loca.lt` URL
+- **`--show-guide`** prints the full runbook (curl checks, **Bypass-Tunnel-Reminder**, share blurb)
 
-## Layout
+### Layout
 
 | Path | Purpose |
 |------|---------|
-| `.cursor/skills/publish-preview/SKILL.md` | Cursor agent skill (triggers + thin notes) |
-| `.cursor/skills/publish-preview/scripts/serve_basic_auth.py` | PEP 723 script: auth server, port cleanup, `--show-guide` |
+| `.cursor-plugin/marketplace.json` | Marketplace manifest |
+| `plugins/localtunnel-publish/.cursor-plugin/plugin.json` | Plugin manifest |
+| `plugins/localtunnel-publish/skills/publish-preview/SKILL.md` | Agent skill |
+| `plugins/localtunnel-publish/scripts/serve_basic_auth.py` | Auth server + cleanup |
+| `plugins/localtunnel-publish/assets/logo.svg` | Marketplace logo |
+| `scripts/validate-template.mjs` | Validator from upstream template |
 
-Copy this repository’s `.cursor` tree into a project, or vendor the paths you need.
+### Quick start (contributors)
 
-## Requirements
+```bash
+git clone https://github.com/smartex-ai-sw/localtunnel-publish-skill.git
+cd localtunnel-publish-skill
+node scripts/validate-template.mjs
+uv run plugins/localtunnel-publish/scripts/serve_basic_auth.py --show-guide
+```
 
-- Python 3.10+
-- Optional: [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended; installs `psutil` via PEP 723)
-- Node / npm for `npx -y localtunnel`
+### Requirements
 
-## Defaults
+- **Node.js** (for `node scripts/validate-template.mjs` and `npx localtunnel`)
+- **Python 3.10+**
+- Optional: **[uv](https://docs.astral.sh/uv/getting-started/installation/)** (recommended)
+
+### Validation
+
+Before opening a PR or submitting to Cursor:
+
+```bash
+node scripts/validate-template.mjs
+```
+
+### Defaults (script)
 
 - Basic Auth user: `preview` (override `--user`)
-- Password file: `.local/preview-auth.pass` (created on first run; **gitignore it**)
+- Password file: `.local/preview-auth.pass` (gitignored; override `--pass-file`)
 
-## License
+### License
 
-Use and modify as needed for your team; no warranty.
+MIT (see plugin manifest).
+
+### Submission
+
+Per [plugin-template](https://github.com/cursor/plugin-template): repository link and checklist; contact Cursor per their current publish flow.

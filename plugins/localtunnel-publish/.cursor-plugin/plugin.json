@@ -1,0 +1,21 @@
+{
+  "name": "localtunnel-publish",
+  "displayName": "Localtunnel Publish",
+  "version": "0.1.0",
+  "description": "Share a local static site on the public internet: HTTP Basic Auth on localhost, automatic port cleanup, PEP 723 uv workflow, and localtunnel. Run scripts/serve_basic_auth.py --show-guide for full steps.",
+  "author": {
+    "name": "smartex-ai-sw",
+    "email": "opensource@smartex.ai"
+  },
+  "license": "MIT",
+  "keywords": [
+    "localtunnel",
+    "preview",
+    "basic-auth",
+    "static-site",
+    "tunnel",
+    "localhost",
+    "cursor"
+  ],
+  "logo": "assets/logo.svg"
+}
